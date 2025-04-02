@@ -9,6 +9,7 @@ import todoImage from './todo.png'; // Import  Todo project image
 import facebook from './facebook.png'; // Import  Todo project image
 import google from './google.jpg'; // Import  Todo project image
 import insta from './insta.png'; // Import  Todo project image
+import profilePic from './profilepic.png'
 
 function App() {
   useEffect(() => {
@@ -34,9 +35,13 @@ function App() {
 function Header() {
   return (
     <header className="header" data-aos="fade-down">
-     
-      <h1 className="renz">Renz Jan A. Limas</h1>
-      <p>web developer</p>
+    <div className="renz-img">
+      <img src={profilePic} alt="Profile" className="profile-pic" />
+      <div>
+        <h1 className="renz">Renz Jan A. Limas</h1>
+        <p>Web Developer</p>
+      </div>
+    </div>
       <nav className='nav-links'>
         <Link to="about" smooth={true} duration={500}>About</Link>
         <Link to="skills" smooth={true} duration={500}>Skills</Link>
