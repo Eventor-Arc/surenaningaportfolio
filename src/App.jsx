@@ -108,7 +108,7 @@ function Projects() {
           <h3 className="project-title">Eventor</h3>
           <img src={eventorImage} alt="Shopee Clone Screenshot" className="project-image" />
           <p className="project-description">A WEB USING MERN STACK</p>
-          <a href="https://awesometodos-kmh0.onrender.com/" target="_blank" rel="noreferrer">
+          <a href="https://www.figma.com/proto/etRF1JdaznTe4xF73kuHse/Eventor?node-id=426-2&t=8oHyV3PL0IPWF8zK-1/" target="_blank" rel="noreferrer">
             View Project
           </a>  
         </div>
