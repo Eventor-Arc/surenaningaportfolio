@@ -1,38 +1,499 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+
+ * {
+   margin: 0;
+ }
+
+ body {
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+ }
+
+ img,
+ picture,
+ video,
+ canvas,
+ svg {
+   display: block;
+   max-width: 100%;
+ }
+
+ input,
+ button,
+ textarea,
+ select {
+   font: inherit;
+ }
+
+ p,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   overflow-wrap: break-word;
+ }
+
+ 
+
+ body {
+   background-color: #07000d;
+   background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+   color: white;
+   font-family: 'Rubik', sans-serif;
+ }
+
+
+
+ .container {
+   max-width: 1200px;
+   margin: 0 auto;
+ }
+
+
+ .todo__status {
+  font-size: 1.75rem;
+ }
+
+
+ 
+ .form {
+   display: flex;
+   gap: 0.5rem;
+   width: 50%;
+   margin: 1rem auto;
+ }
+
+ .form__input {
+   flex: 1;
+   padding: 0.5rem 0.75rem;
+   border-radius: 0.25rem;
+   border: none;
+   outline: none;
+
+   &:focus,
+   &:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+   }
+ }
+
+ .form__button {
+  border: none;
+  background-color: rgba(113, 0, 212, 0.7);
+  cursor: pointer;
+  color: white;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba(95, 0, 179, 0.5) ;
+  }
+ }
+ 
+
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .form {
+    width: 95%;
+  }
+
+  .todo {
+    width: 95%;
+    font-size: 1.2rem;
+  }
+ }
+ @import 'aos/dist/aos.css';
+
+ .App, body {
+   font-family: 'Roboto', sans-serif; 
+   text-align: left; 
+   
+   margin: 0;
+   padding: 0;
+ }
+ 
+ 
+ .App {
+   position: relative;
+   z-index: 1;
+   color: #f0f0f0; 
+ }
+ 
+ header, section, footer {
+   padding: 2rem; 
+ }
+ 
+ header {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start; 
+ }
+ 
+ .image-holder div {
+   width: 100%;
+ }
+ 
+ .image-holder img {
+   width: 70%; 
+ }
+ 
+ header h1 {
+   font-size: 2.5rem; 
+ }
+ 
+ header p {
+   font-size: 1.2rem; 
+ }
+ 
+ header nav {
+   display: flex;
+   justify-content: flex-start; 
+   gap: 1rem; 
+   font-size: 1.2rem; 
+ }
+ 
+ .header nav a:hover {
+   background-color: #ff4081; 
+   color: #ffffff; 
+ }
+ 
+ .header nav a {
+   color: #e0e0e0; 
+   text-decoration: none; 
+   padding: 0.7rem; 
+   border-radius: 10px; /* Adjusted border radius */
+   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+   cursor: pointer;
+ }
+ 
+ .skill-bar {
+   background-color: #e0e0e0; /* Changed background color */
+   width: 100%;
+   height: 25px; /* Increased height */
+   overflow: hidden;
+   margin: 15px 0; /* Increased margin */
+   position: relative;
+   transition: height 0.3s ease; /* Smooth transition */
+ }
+ 
+ .skill-level-1 {
+   background-color: #FFFF00; /* Changed color for progress bars */
+   height: 100%;
+   width: 100%; /* Dynamic width */
+   transition: width 0.4s ease, background-color 0.3s ease; /* Smooth transition */
+ }
+ .skill-level-2 {
+   background-color: #008000; /* Changed color for progress bars */
+   height: 100%;
+   width: 100%; /* Dynamic width */
+   transition: width 0.4s ease, background-color 0.3s ease; /* Smooth transition */
+ }
+ 
+ .projects {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+ }
+ 
+ .projects-list {
+  width: 100%;
+  height: auto; /* Adjust height dynamically */
+  display: flex;
+  flex-direction: row; /* Arrange projects in a horizontal row */
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Space between projects */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 20px; /* Add padding for spacing */
+  white-space: nowrap; /* Prevents wrapping */
+}
+ 
+ .project {
+   width: 100%;
+ }
+ 
+ .project img {
+   width: 100%;
+ }
+ 
+ .project a {
+   background-color: #1c1c1c; /* Changed background color */
+   color: #ff4081; /* Changed text color */
+   text-decoration: none;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .project a:hover {
+   background-color: #444; /* Changed hover background color */
+ }
+ 
+ 
+ /* Footer Links */
+ .contact a {
+   color: #e0e0e0; /* Changed text color */
+   text-decoration: none;
+ }
+ 
+ .contact a:hover {
+   text-decoration: underline;
+   color: #ff4081; /* Changed hover color */
+ }
+ 
+ /* Footer Styles */
+ .footer {
+   color: #e0e0e0; /* Changed text color */
+   padding: 1.5rem 0; /* Increased padding */
+   text-align: center;
+   position: relative;
+   bottom: 0;
+   width: 100%;
+ }
+ 
+ .footer p {
+   margin: 0;
+   font-size: 1rem; /* Increased font size */
+ }
+ 
+ .social-links {
+   margin-top: 1.5rem; /* Increased margin */
+ }
+ 
+ .social-links a {
+   color: #e0e0e0; /* Changed text color */
+   margin: 0 20px; /* Increased margin */
+   text-decoration: none;
+   font-size: 1.5rem; /* Increased font size */
+   display: inline-flex;
+   align-items: center;
+ }
+ 
+ .social-links a:hover {
+   color: #ff4081; /* Changed hover color */
+ }
+ 
+ .social-links a svg {
+   margin-right: 10px; /* Increased space between icon and text */
+ }
+ 
+ @media (max-width: 600px) {
+   section, header, footer {
+     padding: 1.5rem 0.5rem; /* Reduced padding */
+   }
+ 
+   header nav {
+     font-size: 1.1rem; /* Decreased font size */
+   }
+ 
+   header {
+     line-height: 1.4; /* Increased line height */
+   }
+ }
+ 
+ @media (min-width: 601px) {
+   h2 {
+     font-size: 3.5rem; /* Decreased font size */
+   }
+   
+   .image-holder img {
+     width: 40%; /* Increased image width */
+   }
+ 
+   header {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start; /* Original alignment for items in the header */
+     position: relative; /* Necessary for absolute positioning of the nav */
+   }
+   
+   header nav {
+     display: flex;
+     justify-content: flex-start; /* No longer necessary since we will position it at the right */
+     gap: 1rem;
+     font-size: 1.2rem;
+     position: absolute; /* Position the nav in the upper-right */
+     top: 1rem; /* Adjust for vertical spacing */
+     right: 2rem; /* Adjust for horizontal spacing */
+   }
+ 
+   header p {
+     font-size: 2.5rem; /* Decreased font size */
+   }
+   
+   .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
+    padding: 2rem; /* Add margin to space out from other sections */
+  }
+  
+  .about p {
+    font-size: 2rem; /* Adjust font size */
+    padding: 0 10%; /* Add padding for better readability */
+  }
+ 
+   .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
+    padding: 2rem; /* Changed alignment */
+   }
+ 
+   .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
+    padding: 2rem; /* Increased width */
+   }
+ 
+   .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  /* Center the social icons container */
+  .contact .social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 20px; /* Space between the icons */
+    margin-top: 20px; /* Add top margin for spacing */
+  }
+  
+  /* Adjust each social icon */
+  .contact .social-icons a {
+    display: inline-block;
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    overflow: hidden;
+    border-radius: 50%; /* Make the icons round */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Zoom effect on hover for social icons */
+  .contact .social-icons a:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  /* Ensure images fit within the social icon container */
+  .contact .social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
   }
 }
+ 
+/* Center the projects container (list of projects) */
+.project-list {
+  width: 100%;
+  height: auto; /* Adjust height dynamically */
+  display: flex;
+  flex-direction: row; /* Arrange projects in a horizontal row */
+  align-items: center; /* Align items to the top */
+  gap: 20px; /* Space between projects */
+  padding: 20px; /* Add padding for spacing */
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Individual project container */
+.project {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  text-align: center; /* Center text */
+  width: 100%;
+  padding: 2rem;
+  border-radius: 15px; /* Rounded corners */
+  background: #222; /* Example background color */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.projects:hover {
+  transform: translateY(-5px); /* Lift project slightly on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Adjust project images */
+.project-img {
+  width: 100%; /* Ensure the image fills the project container */
+  height: 200px; /* Set a fixed height for consistency */
+  object-fit: cover; /* Crop the image to fit without distortion */
+  border-radius: 10px; /* Slight rounding for aesthetics */
+  transition: transform 0.3s ease;
+}
+
+.projects:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Project title styling */
+.project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #e0e0e0;
+  margin: 1rem 0 0.5rem; /* Proper spacing */
 }
 
-.App-link {
-  color: #61dafb;
+/* Project description */
+.project-description {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 90%;
+  word-wrap: break-word;
+  
+  /* Cropping the text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." at the end */
+}
+@media (max-width: 800px) {
+  .project {
+    width: 250px; 
+  }
+}
+@media (max-width: 600px) {
+  .project {
+    width: 90%; 
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+   .renz {
+     font-size: 2rem; 
+   }
+ 
